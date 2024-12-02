@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Yönetim Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Öğrenci Yönetim Sistemi</h1>
+
+    <!-- Ana Menü -->
+    <div class="menu">
+        <button onclick="showSection('home')">Ana Sayfa</button>
+        <button onclick="showSection('addCourse')">Ders Ekle</button>
+        <button onclick="showSection('addStudent')">Öğrenci Ekle</button>
+        <button onclick="showSection('courseList')">Ders Listesi</button>
+        <button onclick="showSection('studentList')">Öğrenci Listesi</button>
+    </div>
+
+    <!-- Ana Sayfa -->
+    <div id="home" class="section active">
+        <h2>Hoş geldiniz</h2>
+        
+    </div>
+
+    <!-- Ders Ekleme Bölümü -->
+    <div id="addCourse" class="section">
+        <h2>Ders Ekle</h2>
+        <input type="text" id="courseName" placeholder="Ders Adı">
+        <select type="number" id="coursePointSys" placeholder="Ders puan skalası">
+            <option value="7">7</option>
+            <option value="10">10</option>
+        </select>
+        <button onclick="addCourse()">Ders Ekle</button>
+    </div>
+
+    <!-- Öğrenci Ekleme Bölümü -->
+    <div id="addStudent" class="section">
+        <h2>Öğrenci Ekle</h2>
+        <input type="text" id="studentName" placeholder="Öğrenci Adı">
+        <input type="text" id="studentMidterm" placeholder="Vize Notu">
+        <input type="text" id="studentFinal" placeholder="Final Notu">
+        <select id="courseSelect"></select>
+        <button onclick="addStudent()">Öğrenci Ekle</button>
+    </div>
+
+    <!-- Ders Listesi Bölümü -->
+    <div id="courseList" class="section">
+        <h2>Ders Listesi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ders Adı</th>
+                    <th>Puan Skalası</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody id="courseTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Öğrenci Listesi Bölümü -->
+    <div id="studentList" class="section">
+        <h2>Öğrenci Listesi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Öğrenci Adı</th>
+                    <th>Vize</th>
+                    <th>Final</th>
+                    <th>Ders</th>
+                    <th>Harf Notu</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
